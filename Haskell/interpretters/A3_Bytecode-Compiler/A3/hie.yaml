@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "assignment3:lib"
+
+    - path: "./app/Main.hs"
+      component: "assignment3:exe:snh"
+
+    - path: "./test"
+      component: "assignment3:test:assignment3-test"

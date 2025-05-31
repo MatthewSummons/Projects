@@ -1,0 +1,4 @@
+var mult : Int -> Int -> Int = function(x: Int) { function(y: Int) {
+    x * y
+}};
+mult(3)(2)

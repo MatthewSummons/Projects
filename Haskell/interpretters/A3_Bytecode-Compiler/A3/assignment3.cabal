@@ -1,0 +1,57 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           assignment3
+version:        0.1.0.0
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  exposed-modules:
+      Declare
+      DeclareVM
+      InfStream
+      Interp
+      Parser
+      StackVM
+      Tokens
+      TypeCheck
+  hs-source-dirs:
+      src
+  build-tools:
+      alex
+    , happy
+  build-depends:
+      array
+    , base
+  default-language: Haskell2010
+
+executable snh
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      assignment3
+    , base
+    , mtl
+    , repline
+    , text
+  default-language: Haskell2010
+
+test-suite assignment3-test
+  type: exitcode-stdio-1.0
+  main-is: doctest-driver.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      assignment3
+    , base
+    , doctest
+    , doctest-discover
+  default-language: Haskell2010

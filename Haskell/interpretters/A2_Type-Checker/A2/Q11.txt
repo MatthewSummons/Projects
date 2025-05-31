@@ -1,0 +1,9 @@
+The current type checker does not support recursive function calls. The issue lies within
+`checkFunEnv` and not `tcheck` [see rec.txt]. In fact if one were able to determine the return type
+of a recursive function then tcheck can easily verify the result.
+
+A possible fix to this would be to have the programmer explicitly write the return type
+for (recursive) functions. Then we can check the body of the function call under the 
+intended return type (along with the parameters and TFunEnv containing the types of
+previously defined functions--now appended with the intended return type of the function
+being type checked).
