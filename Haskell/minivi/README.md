@@ -10,7 +10,8 @@ A simple terminal-based text editor (A vim clone) written in Haskell.
 
 ## Demo
 <p align="center">
-  ![til](./demo.gif)
+  <img src="./demo.gif" alt="minivi demo" />
+  <!-- ![til](./demo.gif) -->
 </p>
 
 ## Building and Running
