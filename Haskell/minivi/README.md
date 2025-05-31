@@ -11,7 +11,6 @@ A simple terminal-based text editor (A vim clone) written in Haskell.
 ## Demo
 <p align="center">
   <img src="./demo.gif" alt="minivi demo" />
-  <!-- ![til](./demo.gif) -->
 </p>
 
 ## Building and Running
@@ -38,32 +37,18 @@ $ cabal test
 
 ## Goals
 
-- content rendering `renderContent`
+- Content rendering `renderContent`
   - replace tabs with spaces
   - generate content buffer to be rendered
-- cursor update `updateCursor`
-- editing `handleInsert`
+- Cursor update `updateCursor`
+- Editing `handleInsert`
   - insertion
   - deletion
   - return
-- commands `handleCommand`
+- Commands `handleCommand`
   - write file
   - quit
   - force quit
-
-## Bonus
-
-- simple features
+- Simple features
   - start program without initial file and save to file using `:w file`
   - press `w` (or `b`) to go to the start of next/last word, and use `0` (or `$`) to jump to the first/last character of the line.
-- moderate features
-  - press `u` to undo and `U` to redo, and keep a history round 4 steps
-  - press `/` to search, and `n` (or `N`) to jump to next/last match
-
-## Submission
-
-Submit a single zip file containing the project. You can use the following command (replace `XXX` with your UID):
-
-```sh
-$ zip -r A3_XXX.zip README.md minivi.cabal app src test c
-```
