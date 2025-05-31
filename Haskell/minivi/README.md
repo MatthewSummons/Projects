@@ -8,7 +8,10 @@ A simple terminal-based text editor (A vim clone) written in Haskell.
 - `ghc 9.4.8` (not tested with other `ghc` vesions)
 - `cabal 3.12` (any 3.0+ version should work)
 
-![til](./demo.gif)
+## Demo
+<p align="center">
+  ![til](./demo.gif)
+</p>
 
 ## Building and Running
 
