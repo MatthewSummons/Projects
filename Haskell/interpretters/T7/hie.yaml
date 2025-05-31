@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "tutorial7:lib"
+
+    - path: "./app/Main.hs"
+      component: "tutorial7:exe:snh"
+
+    - path: "./test"
+      component: "tutorial7:test:tutorial7-test"

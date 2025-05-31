@@ -1,0 +1,43 @@
+name:                tutorial8
+version:             0.1.0.0
+
+dependencies:
+- base
+
+library:
+  source-dirs: src
+  other-modules: []
+  dependencies:
+  - array
+  build-tools:
+  - alex
+  - happy
+
+executables:
+  snh:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tutorial8
+    - mtl
+    - text
+    - repline
+    other-modules: []
+
+tests:
+  tutorial8-test:
+    main:                doctest-driver.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tutorial8
+    - doctest
+    - doctest-discover
+    other-modules: []

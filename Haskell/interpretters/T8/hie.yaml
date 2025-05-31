@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "tutorial8:lib"
+
+    - path: "./app/Main.hs"
+      component: "tutorial8:exe:snh"
+
+    - path: "./test"
+      component: "tutorial8:test:tutorial8-test"

@@ -1,0 +1,40 @@
+name:                tutorial5
+version:             0.1.0.0
+
+dependencies:
+- base
+
+library:
+  source-dirs: src
+  other-modules: []
+  dependencies:
+  - array
+  build-tools:
+  - alex
+  - happy
+
+executables:
+  tutorial5-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tutorial5
+    other-modules: []
+
+tests:
+  tutorial5-test:
+    main:                doctest-driver.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tutorial5
+    - doctest
+    - doctest-discover
+    other-modules: []
