@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+    attacker:
+        image: handsonsecurity/seed-ubuntu:large
+        container_name: attacker-tcp-rst
+        tty: true
+        cap_add:
+                - ALL
+        privileged: true
+        volumes:
+                - ./volumes:/volumes
+        network_mode: host
+
+    Victim:
+        build: ./server_build
+        image: server-image
+        container_name: server-tcp-rst
+        tty: true
+        cap_add:
+                - ALL
+        privileged: true
+        sysctls:
+                - net.ipv4.tcp_syncookies=0
+
+        networks:
+            net-10.7.0.0:
+                ipv4_address: 10.7.0.2
+
+        command: bash -c "
+                      /etc/init.d/openbsd-inetd start  &&
+                      tail -f /dev/null
+                 "
+                  
+    User1:
+        image: handsonsecurity/seed-ubuntu:large
+        container_name: user1-tcp-rst
+        tty: true
+        cap_add:
+                - ALL
+        networks:
+            net-10.7.0.0:
+                ipv4_address: 10.7.0.3
+
+        command: bash -c "
+                      /etc/init.d/openbsd-inetd start  &&
+                      tail -f /dev/null
+                 "
+
+networks:
+    net-10.7.0.0:
+        name: net-10.7.0.0
+        ipam:
+            config:
+                - subnet: 10.7.0.0/16
+
