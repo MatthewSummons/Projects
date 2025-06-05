@@ -1,2 +1,11 @@
-# Mac_OS Artifacts
+# Mac_OS
 .DS_Store
+
+# Python
+*.pyc
+__pycache__/
+venv/
+env/
+
+
+*.zip
