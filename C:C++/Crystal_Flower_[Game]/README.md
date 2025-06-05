@@ -1,4 +1,4 @@
-# COMP2113-Project
+# Crystal Flower
 *A text-based game created in C/C++ created by Shaheer Ziya*
 
 ![gameplay](start.gif)
