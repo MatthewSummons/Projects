@@ -22,6 +22,6 @@ Substituting the expression for $I$ and rearranging, we can derive the formula f
 $$\omega^2 = \frac{4gh}{3R^2 + r^2}$$
 
 
-![Plot-1](./Angular_Frequency_on_Height.png)
+![Plot-1](./Angular_Velocity_on_Height.png)
 
-![Plot-2](./Squared_Angular_Frequency_on_Height.png)
+![Plot-2](./Squared_Angular_Velocity_on_Height.png)
