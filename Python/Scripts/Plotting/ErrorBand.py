@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy.polynomial import Polynomial
+from scipy.optimize import curve_fit
 import seaborn as sns
 
 ORANGE = '#D57541'
@@ -22,6 +23,9 @@ def omega(h:float | np.ndarray, r:float, R:float) -> float | np.ndarray:
 def omega_sqr(h:float | np.ndarray, r:float, R:float) -> float | np.ndarray:
     return (4 * g * h) / (3 * R ** 2 + r ** 2)
 
+def sqrt(x, a, b):
+    return a + b * np.sqrt(x)
+
 
 lower_bounds = omega(x, r + r_err, R + R_err)
 theoretical = omega(x, r, R)
@@ -33,11 +37,13 @@ y, err_y         = [12.08, 21.67, 28.56, 34.27, 36.96],        [0.42, 1.49, 1.30
 y_sqr, sqr_err_y = [146.00, 469.42, 815.67, 1174.56, 1366.03], [5.62, 64.75, 74.15, 192.20, 160.71]
 
 # Least-Squares Fits for Experimental Data
-series_fit_w = Polynomial.fit(x_data, y, 2)
-best_fit_y = series_fit_w(x)
+popt, _ = curve_fit(sqrt, x_data, y)
+print("Coefficients for Angular Frequency Fit (a, b):", popt)
+best_fit_y = sqrt(x, *popt)
 
 
 series_fit_w_sqr = Polynomial.fit(x_data, y_sqr, 1)
+print("Coefficients for Squared Angular Frequency Fit (a, b):", series_fit_w_sqr.coef)
 best_fit_y_sqr = series_fit_w_sqr(x)
 
 
