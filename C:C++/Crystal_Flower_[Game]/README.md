@@ -1,5 +1,5 @@
 # Crystal Flower
-*A text-based game created in C/C++ created by Shaheer Ziya*
+*A text-based game created in C/C++*
 
 ![gameplay](start.gif)
 
